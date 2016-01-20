@@ -1,0 +1,23 @@
+.pic-container {
+  float: left;
+}
+.content-container {
+  overflow: hidden;
+}
+.about-container {
+  display: inline;
+}
+.list-block {
+  display: inline-block;
+  width: 25%;
+  margin: auto;
+}
+.user-profile p {
+  width: 650px;
+}
+.user-profile .text-block {
+  width: 650px;
+}
+.profile-pic-url {
+  display: block;
+}
