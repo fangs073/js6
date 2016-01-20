@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+	<script type="text/javascript" src="js6.js"></script>
+</head>
+<body ng-controller="profileController">
+
+	<div class="user-profile">
+		<div class="pic-container">
+			<img ng-src="{{profilePic.url}}">
+		<div class="content-container">
+			<h1>{{userName}}</h1>
+			<div class="about-container paragraph-block">
+				<h4>{{ paragraphs.name }}</h4>
+				<p ng-bind="paragraphs.content"></p>
+			</div>
+			<div class="villains-container list-block" ng-repeat="list in lists">
+				{{ list.name }}
+				<ul ng-repeat="listItem in list.listContent">
+					<li>{{ listItem.value }}</li>
+				</ul>
+			</div>
+			
+		</div>
+		<form ng-if="form.show" class="update-form" ng-submit="saveFormValues(); form.show = !form.show">
+			User Name: <input type="text" ng-model="formValues.userName" value="{{formValues.userName}}"></input>
+			Bio: <textarea class="text-block" ng-model="formValues.paragraphs.content"></textarea>
+			<div class="lists-container">
+				<div class="list-block" ng-repeat="list in formValues.lists">
+					<div ng-model="list.name">{{ list.name }}</div>
+						<div ng-repeat="listItem in list.listContent">
+							<input ng-model="listItem.value" value="{{listItem.value}}" type="text"></input>
+						</div>
+				</div>
+			</div>
+			<input ng-show="form.show" class="submit" type="submit" ng-model="formValues.userName"></input>
+		</form>
+		<button ng-show="!form.show" ng-click="form.show = !form.show; setFormValues()"> {{ form.content[form.show*1] }}</button>
+	</div>
+</body>
+</html>

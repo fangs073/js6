@@ -1,4 +1,4 @@
-.pic-container {
+.pic-container img {
   float: left;
 }
 .content-container {
@@ -19,5 +19,15 @@
   width: 650px;
 }
 .profile-pic-url {
+  display: block;
+}
+.update-form * {
+  display: block;
+}
+.update-form * .list-block {
+  display: inline-block;
+  width: 25%;
+}
+.update-form * .list-block margin auto input {
   display: block;
 }
