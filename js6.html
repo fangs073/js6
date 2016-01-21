@@ -25,7 +25,7 @@
 			</div>
 			
 		</div>
-		<form ng-if="form.show" class="update-form" ng-submit="saveFormValues(); form.show = !form.show">
+		<form ng-keypress="keyPressHandler()" ng-if="form.show" class="update-form" ng-submit="saveFormValues(); form.show = !form.show">
 			User Name: <input type="text" ng-model="formValues.userName" value="{{formValues.userName}}"></input>
 			Bio: <textarea class="text-block" ng-model="formValues.paragraphs.content"></textarea>
 			<div class="lists-container">

@@ -2,7 +2,7 @@ var app = angular.module("app", []);
 
 
 angular.module('app')
-	.controller('profileController', ['$scope', function($scope){
+	.controller('profileController', ['$scope', '$timeout',function($scope, $timeout){
 
 		$scope.userName = "John Wayne"
 
@@ -68,15 +68,19 @@ angular.module('app')
 					{value: 'Cemetary Man', show: true}
 				]
 			},
-			// {
-			// 	name: 'Languages Known',
-			// 	listContent: [
-			// 		{value: 'Sumerian', show: true},
-			// 		{value: 'Linear B', show: true},
-			// 		{value: 'Cockney', show: true}
-			// 	]
-			// },
 		]
 
+		// var saveData;
+
+		// $scope.keyPressHandler = function() {
+		// 	$timeout.cancel(saveData)
+		// 	saveData = function() {
+		// 		console.log('!!!!!');	
+		// },
+		// 1000);
+			
+		// }
+
+		
 
 }])
